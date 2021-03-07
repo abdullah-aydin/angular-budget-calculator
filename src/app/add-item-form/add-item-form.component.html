@@ -16,8 +16,12 @@
                 </p>
             </div>
 
-            <div class="field ">
-                <button class="button is-primary" [disabled]="!itemForm.valid" >Add</button>
+            <div class="field is-narrow">
+                <button class="button is-primary" [ngClass]="{'is-primary': isNewItem, 'is-success': !isNewItem }"
+                    [disabled]="!itemForm.valid">
+                    <p *ngIf="isNewItem">Add</p>
+                    <p *ngIf="!isNewItem">Save</p>
+                </button>
             </div>
 
         </div>
